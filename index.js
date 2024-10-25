@@ -36,7 +36,7 @@ app.get("/ytdip", async (req, res) => {
         });
         fs.writeFileSync(filePath, Buffer.from(rr.data));
 
-        music = `${req.protocol}://${req.get("host")}/${p}`;
+        music = `${req.protocol}://${req.get("host")}/d/${p}`;
 
         res.json({
             title: dat.title || "",
