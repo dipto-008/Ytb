@@ -47,6 +47,7 @@ app.get("/ytdip", async (req, res) => {
             author: "亗ㅤƊᎥᎮㅤƬᴏㅤ亗"
         });
     } catch (error) {
+        console.log(error)
         res.status(500).json({ error: "Failed to fetch data from the external API.", details: error.message });
     }
 });
