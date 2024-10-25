@@ -31,7 +31,7 @@ app.get("/ytdip", async (req, res) => {
         }
 
         const filePath = path.join(__dirname, "d", p);
-        const rr = await axios.get(dat.url, {
+        const rr = await axios.get(dat.downloadLink, {
             responseType: "arraybuffer"
         });
         fs.writeFileSync(filePath, Buffer.from(rr.data));
@@ -41,9 +41,9 @@ app.get("/ytdip", async (req, res) => {
         res.json({
             title: dat.title || "",
             format,
-            quality: dat.qualityLabel || "",
+            quality: dat.quality || "",
             downloadLink: music,
-            size: dat.bitrate || "",
+            size: dat.size || "",
             author: "亗ㅤƊᎥᎮㅤƬᴏㅤ亗"
         });
     } catch (error) {
